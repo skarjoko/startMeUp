@@ -14,7 +14,7 @@ if [ "$USEROS" = "Darwin" ]; then
     echo Installing Xcode
     $(xcode-select --install)
     echo Installing Homebrew
-    $(ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”) 
+    sh install_homebrew.sh
 fi
 
 if [ "$USEROS" = "Linux" ]; then
@@ -25,7 +25,7 @@ if [ "$USEROS" = "Linux" ]; then
 fi
 
 echo Installing rvm
-$(curl -sSl https://get.rvm.io | bash -s stable)
+sh install_rvm.sh
 
 echo Linking rvm to bash
 echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
