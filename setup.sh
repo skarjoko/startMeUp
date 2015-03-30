@@ -28,4 +28,5 @@ echo Installing rvm
 sh install_rvm.sh
 
 echo Linking rvm to bash
+source $HOME/.rvm/scripts/rvm
 echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
