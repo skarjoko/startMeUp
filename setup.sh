@@ -23,6 +23,10 @@ if [ "$USEROS" = "Linux" ]; then
     sudo apt-get -y install vim
     echo "Installing build essentials"
     sudo apt-get -y install build-essential curl
+    echo "Installing vagrant"
+    sudo apt-get -y install vagrant
+    echo "Installing GPG key for RVM"
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 fi
 
 echo "Installing rvm"
