@@ -21,8 +21,6 @@ if [ "$USEROS" = "Darwin" ]; then
     brew install mysql
     echo "Installing vagrant"
     brew install Caskroom/cask/vagrant
-    echo "Installing vagrant aws plugin"
-    vagrant plugin install vagrant-aws
     echo "Installing and linking GCC"
     brew tap homebrew/versions && brew tap homebrew/dupes && brew install apple-gcc42
     sudo ln -nsf $(which gcc-4.2) /usr/bin/gcc-4.2
@@ -50,5 +48,11 @@ sh install_rvm.sh
 
 echo "Linking rvm to bash"
 echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
+
+echo "Installing vagrant aws plugin"
+vagrant plugin install vagrant-aws
+
+echo "Installing vagrant dummy box"
+vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box
 
 echo "Please restart your terminal in order to apply the RVM changes."
