@@ -42,7 +42,7 @@ if [ "$USEROS" = "Linux" ]; then
     echo "Installing MySQL server"
     sudo apt-get -y install mysql-server
     echo "Applying mysql config file"
-    sudo cp Linux/my.cnf /etc/my.cnf
+    sudo cp Linux/my.cnf /etc/mysql/my.cnf
 fi
 
 echo "Installing rvm"
