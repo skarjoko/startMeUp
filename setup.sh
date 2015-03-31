@@ -21,6 +21,8 @@ if [ "$USEROS" = "Darwin" ]; then
     brew install mysql
     echo "Installing vagrant"
     brew install Caskroom/cask/vagrant
+    echo "Installing vagrant aws plugin"
+    vagrant plugin install vagrant-aws
 fi
 
 if [ "$USEROS" = "Linux" ]; then
