@@ -23,6 +23,9 @@ if [ "$USEROS" = "Darwin" ]; then
     brew install Caskroom/cask/vagrant
     echo "Installing vagrant aws plugin"
     vagrant plugin install vagrant-aws
+    echo "Installing and linking GCC"
+    brew tap homebrew/versions && brew tap homebrew/dupes && brew install apple-gcc42
+    sudo ln -nsf $(which gcc-4.2) /usr/bin/gcc-4.2
 fi
 
 if [ "$USEROS" = "Linux" ]; then
