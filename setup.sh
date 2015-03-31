@@ -19,6 +19,8 @@ if [ "$USEROS" = "Darwin" ]; then
     brew doctor
     echo "Installing mysql"
     brew install mysql
+    echo "Installing vagrant"
+    brew install Caskroom/cask/vagrant
 fi
 
 if [ "$USEROS" = "Linux" ]; then
