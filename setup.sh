@@ -49,10 +49,12 @@ sh install_rvm.sh
 echo "Linking rvm to bash"
 echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
 
-echo "Installing vagrant aws plugin"
-vagrant plugin install vagrant-aws
-
-echo "Installing vagrant dummy box"
-vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box
+# option to install and run vagrant with AWS key
+echo "Would you like to install and run your vagrant?
+NOTE: You need an AWS key and secret key in order to proceed. [y/n]"
+read VAGRANT_ANSWER
+if [ "$VAGRANT_ANSWER" = "y" ] || [ "$VAGRANT_ANSWER" = "Y" ]; then
+    sh install_vagrant.sh
+fi
 
 echo "Please restart your terminal in order to apply the RVM changes."
